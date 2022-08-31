@@ -61,7 +61,7 @@ let restaurants = [
     ],
   },
 ];
-var schema = buildSchema(`
+const schema = buildSchema(`
 type Query{
   restaurant(id: Int): restaurant
   restaurants: [restaurant]
@@ -91,7 +91,7 @@ type Mutation{
 `);
 // The root provides a resolver function for each API endpoint
 
-var root = {
+const root = {
   restaurant: (arg) => {
     // Your code goes here
     return restaurants[arg.id - 1];
